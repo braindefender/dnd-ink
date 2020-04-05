@@ -9,14 +9,14 @@ export default {
   props: {
     name: { type: String, required: true },
     index: { type: Number, required: true },
-    active: { type: Boolean, required: false, default: () => false }
+    active: { type: Boolean, required: false, default: () => false },
   },
   methods: {
     goto(index) {
       // console.log(this.$store._mutations)
       this.$store.commit.sync({ type: 'tabs/goto', index })
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -29,7 +29,6 @@ export default {
   width: 64px
   height: 64px
   cursor: pointer
-  margin-right: 24px
   &:last-child
     margin-right: 0
   &:hover

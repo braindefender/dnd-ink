@@ -27,6 +27,7 @@ import Dice from '~/components/Dice.vue'
 import TabButton from '~/components/TabButton.vue'
 import TabView from '~/components/TabView'
 
+import Battle from '~/components/sidebar/battle/Battle'
 import Character from '~/components/sidebar/character/Character'
 import Journal from '~/components/sidebar/journal/Journal'
 import Library from '~/components/sidebar/library/Library'
@@ -37,37 +38,38 @@ export default {
   components: {
     Dice,
     TabButton,
-    TabView
+    TabView,
   },
   data() {
     return {
       dices: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20'],
       tabs: [
         { name: 'Journal', component: Journal },
+        { name: 'Battle', component: Battle },
         { name: 'Character', component: Character },
         { name: 'Library', component: Library },
         { name: 'Music', component: Music },
-        { name: 'Settings', component: Settings }
-      ]
+        { name: 'Settings', component: Settings },
+      ],
     }
   },
   computed: {
     current() {
       return this.$store.state.tabs.current
-    }
+    },
   },
   mounted() {
     this.$store.commit.sync({
       type: 'logux/subscribe',
-      channel: 'tabs'
+      channel: 'tabs',
     })
   },
   beforeDestroy() {
     this.$store.commit.sync({
       type: 'logux/unsubscribe',
-      channel: 'tabs'
+      channel: 'tabs',
     })
-  }
+  },
 }
 </script>
 
@@ -91,7 +93,8 @@ export default {
   height: 72px
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: space-between
+  padding: 0 24px
 
 .sidebar-dices
   background-color: #171a1c

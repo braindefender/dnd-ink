@@ -6,12 +6,13 @@
 
 <script>
 export default {
-  props: { dice: { type: String, required: true } }
+  props: { dice: { type: String, required: true } },
 }
 </script>
 
 <style lang="sass" scoped>
 .dice
+  font-family: "Exo 2"
   position: relative
   display: flex
   align-items: center

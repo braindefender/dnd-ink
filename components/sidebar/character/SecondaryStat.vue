@@ -1,18 +1,17 @@
 <template lang="pug">
 .secondary
-  img.secondary__icon(:src="icon")
-  .secondary__text-small(v-if="current")
-    .secondary__current {{ current }}
-    .secondary__total {{ total }}
-  .secondary__text(v-else) {{ total }}
+  img.secondary__icon(:src="stat.icon" :style="{ opacity: brightness }")
+  .secondary__text-small(v-if="stat.current")
+    .secondary__current {{ stat.current }}
+    .secondary__total {{ stat.total }}
+  .secondary__text(v-else) {{ stat.total }}
 </template>
 
 <script>
 export default {
   props: {
-    icon: { type: String, required: true },
-    total: { type: String, required: true },
-    current: { type: String, required: false, default: () => null },
+    stat: { type: Object, required: true },
+    brightness: { type: String, required: false, default: () => '1.0' },
   },
 }
 </script>
@@ -30,6 +29,7 @@ export default {
   &__text
     font-size: 14px
     letter-spacing: 1px
+    opacity: 0.8
   &__text-small
     display: flex
     flex-direction: column
@@ -39,4 +39,6 @@ export default {
     font-weight: bold
   &__total
     opacity: 0.4
+  &__current
+    opacity: 0.8
 </style>

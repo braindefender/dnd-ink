@@ -11,7 +11,7 @@ const Logux = createLogux({
       ? 'ws://lmbd.ml:31337/'
       : 'wss://logux.example.com',
   userId: localStorage.getItem('userId'),
-  credentials: localStorage.getItem('userToken')
+  credentials: localStorage.getItem('userToken'),
 })
 
 const createStore = () => {
@@ -19,8 +19,8 @@ const createStore = () => {
     modules: {
       character,
       icons,
-      tabs
-    }
+      tabs,
+    },
   })
   store.client.start()
 

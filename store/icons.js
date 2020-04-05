@@ -5,6 +5,7 @@ import d10 from '~/assets/Dice/d10.svg'
 import d12 from '~/assets/Dice/d12.svg'
 import d20 from '~/assets/Dice/d20.svg'
 
+import Battle from '~/assets/Tabs/Battle.svg'
 import Character from '~/assets/Tabs/Character.svg'
 import Journal from '~/assets/Tabs/Journal.svg'
 import Library from '~/assets/Tabs/Library.svg'
@@ -13,7 +14,7 @@ import Settings from '~/assets/Tabs/Settings.svg'
 
 const state = () => ({
   dices: { d4, d6, d8, d10, d12, d20 },
-  tabs: { Character, Journal, Library, Music, Settings }
+  tabs: { Battle, Character, Journal, Library, Music, Settings },
 })
 
 export default { state, namespaced: true }

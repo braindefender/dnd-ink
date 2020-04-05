@@ -8,7 +8,7 @@
 export default {
   props: {
     tabs: { type: Array, required: true },
-    current: { type: Number, required: true }
+    current: { type: Number, required: true },
   },
   data() {
     return { direction: 'left' }
@@ -16,13 +16,13 @@ export default {
   computed: {
     component() {
       return this.tabs[this.current].component
-    }
+    },
   },
   watch: {
     current(oldVal, newVal) {
       this.direction = newVal > oldVal ? 'left' : 'right'
-    }
-  }
+    },
+  },
 }
 </script>
 
