@@ -5,6 +5,7 @@
   "author": "Nikita Shirokov",
   "private": true,
   "scripts": {
+    "dev-l": "nuxt",
     "dev": "nuxt --hostname 192.168.0.199",
     "build": "nuxt build",
     "start": "nuxt start",
