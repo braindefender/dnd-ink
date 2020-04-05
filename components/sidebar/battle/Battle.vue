@@ -18,7 +18,7 @@ export default {
       entities: [this.$store.state.character],
       mods: [
         { name: 'Advantage', type: 'positive' },
-        { name: 'Curse', type: 'negative' },
+        { name: 'Disadvantage', type: 'negative' },
       ],
     }
   },
