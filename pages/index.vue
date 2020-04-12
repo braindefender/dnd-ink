@@ -1,6 +1,8 @@
 <template lang="pug">
 .main
   .field
+    .block
+      Token(:entity="entity")
   .sidebar
     .sidebar-tabs
       TabButton(
@@ -26,6 +28,7 @@
 import Dice from '~/components/Dice.vue'
 import TabButton from '~/components/TabButton.vue'
 import TabView from '~/components/TabView'
+import Token from '~/components/field/Token'
 
 import Battle from '~/components/sidebar/battle/Battle'
 import Character from '~/components/sidebar/character/Character'
@@ -34,11 +37,14 @@ import Library from '~/components/sidebar/library/Library'
 import Music from '~/components/sidebar/music/Music'
 import Settings from '~/components/sidebar/settings/Settings'
 
+import Image from '~/assets/Character/Artwork.png'
+
 export default {
   components: {
     Dice,
     TabButton,
     TabView,
+    Token,
   },
   data() {
     return {
@@ -51,6 +57,11 @@ export default {
         { name: 'Music', component: Music },
         { name: 'Settings', component: Settings },
       ],
+      entity: {
+        health: { current: 16, total: 22 },
+        armor: { current: 14, total: 14 },
+        artwork: Image,
+      },
     }
   },
   computed: {
@@ -80,6 +91,11 @@ export default {
 
 .field
   flex-grow: 1
+
+.block
+  width: 64px
+  height: 64px
+  padding: 24px
 
 .sidebar
   display: flex

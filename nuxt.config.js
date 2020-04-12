@@ -25,6 +25,12 @@ export default {
    */
   css: [],
   /*
+   ** Global SASS
+   */
+  styleResources: {
+    sass: ['~/assets/styles/vars.sass', '~/assets/styles/mixins.sass'],
+  },
+  /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
@@ -40,7 +46,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/svg'],
   /*
    ** Build configuration
    */
@@ -48,6 +54,5 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
   },
 }
