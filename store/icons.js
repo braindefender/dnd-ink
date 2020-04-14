@@ -12,9 +12,31 @@ import Library from '~/assets/Tabs/Library.svg'
 import Music from '~/assets/Tabs/Music.svg'
 import Settings from '~/assets/Tabs/Settings.svg'
 
+import Add from '~/assets/UI/Add.svg'
+import Back from '~/assets/UI/Back.svg'
+import Cancel from '~/assets/UI/Cancel.svg'
+import Load from '~/assets/UI/Load.svg'
+import Save from '~/assets/UI/Save.svg'
+import Search from '~/assets/UI/Search.svg'
+import Sort from '~/assets/UI/Sort.svg'
+
+import JournalAttach from '~/assets/Journal/Attach.svg'
+import JournalSend from '~/assets/Journal/Send.svg'
+
 const state = () => ({
   dices: { d4, d6, d8, d10, d12, d20 },
   tabs: { Battle, Character, Journal, Library, Music, Settings },
+  ui: {
+    Add,
+    Back,
+    Cancel,
+    Load,
+    Save,
+    Search,
+    Sort,
+    JournalAttach,
+    JournalSend,
+  },
 })
 
 export default { state, namespaced: true }

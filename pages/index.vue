@@ -1,8 +1,15 @@
 <template lang="pug">
 .main
   .field
+    Layers
     .block
-      Token(:entity="entity")
+      //- Token(:entity="entity")
+    .dices-dock
+      Dice(
+        v-for="dice in dices"
+        :dice="dice"
+        :key="dice"
+      )
   .sidebar
     .sidebar-tabs
       TabButton(
@@ -16,12 +23,6 @@
       :tabs="tabs" 
       :current="current"
     )
-    .sidebar-dices
-      Dice(
-        v-for="dice in dices"
-        :dice="dice"
-        :key="dice"
-      )
 </template>
 
 <script>
@@ -29,6 +30,7 @@ import Dice from '~/components/Dice.vue'
 import TabButton from '~/components/TabButton.vue'
 import TabView from '~/components/TabView'
 import Token from '~/components/field/Token'
+import Layers from '~/components/field/Layers'
 
 import Battle from '~/components/sidebar/battle/Battle'
 import Character from '~/components/sidebar/character/Character'
@@ -45,6 +47,7 @@ export default {
     TabButton,
     TabView,
     Token,
+    Layers,
   },
   data() {
     return {
@@ -91,6 +94,8 @@ export default {
 
 .field
   flex-grow: 1
+  background-color: #131515
+  position: relative
 
 .block
   width: 64px
@@ -101,7 +106,7 @@ export default {
   display: flex
   flex-direction: column
   justify-content: space-between
-  width: 480px
+  width: 432px
   background-color: #0b0d0e
 
 .sidebar-tabs
@@ -112,10 +117,16 @@ export default {
   justify-content: space-between
   padding: 0 24px
 
-.sidebar-dices
-  background-color: #171a1c
-  height: 96px
+.dices-dock
   display: flex
   align-items: center
   justify-content: center
+  position: absolute
+  left: 50%
+  bottom: 12px
+  margin-left: -240px
+  width: 480px
+  height: 96px
+  border-radius: 16px
+  background-color: #171a1c
 </style>
