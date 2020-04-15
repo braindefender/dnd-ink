@@ -102,5 +102,5 @@ export default {
   bottom: -5px
   path
     &:nth-last-child(2)
-      fill: #F26118
+      fill: #F8CD78
 </style>
