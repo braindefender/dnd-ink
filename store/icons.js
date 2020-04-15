@@ -15,10 +15,16 @@ import Settings from '~/assets/Tabs/Settings.svg'
 import Add from '~/assets/UI/Add.svg'
 import Back from '~/assets/UI/Back.svg'
 import Cancel from '~/assets/UI/Cancel.svg'
+import Eraser from '~/assets/UI/Eraser.svg'
+import Highlighter from '~/assets/UI/Highlighter.svg'
 import Load from '~/assets/UI/Load.svg'
+import Ruler from '~/assets/UI/Ruler.svg'
 import Save from '~/assets/UI/Save.svg'
 import Search from '~/assets/UI/Search.svg'
+import Select from '~/assets/UI/Select.svg'
 import Sort from '~/assets/UI/Sort.svg'
+import Palette from '~/assets/UI/Palette.svg'
+import Pencil from '~/assets/UI/Pencil.svg'
 
 import JournalAttach from '~/assets/Journal/Attach.svg'
 import JournalSend from '~/assets/Journal/Send.svg'
@@ -30,12 +36,18 @@ const state = () => ({
     Add,
     Back,
     Cancel,
+    Eraser,
     Load,
     Save,
     Search,
     Sort,
     JournalAttach,
     JournalSend,
+    Palette,
+    Select,
+    Ruler,
+    Pencil,
+    Highlighter,
   },
 })
 

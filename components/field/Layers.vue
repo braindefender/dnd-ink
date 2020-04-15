@@ -56,6 +56,8 @@ export default {
 <style lang="sass" scoped>
 .layers
   position: absolute
+  top: 12px
+  right: 12px
   display: flex
   flex-direction: column
   border-radius: 8px

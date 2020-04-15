@@ -28,7 +28,7 @@ export default {
   components: { Message, UIInput, UIIconButton },
   data() {
     return {
-      inputMessage: null,
+      inputMessage: '',
       log: [
         {
           sender: 'lmbd (Game Master)',

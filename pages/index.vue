@@ -1,9 +1,9 @@
 <template lang="pug">
 .main
-  .field
+  .main__workspace
+    Field(:width="32" :height="24")
+    Tools
     Layers
-    .block
-      //- Token(:entity="entity")
     .dices-dock
       Dice(
         v-for="dice in dices"
@@ -23,14 +23,17 @@
       :tabs="tabs" 
       :current="current"
     )
+    Journal
 </template>
 
 <script>
 import Dice from '~/components/Dice.vue'
+import Field from '~/components/field/Field'
+import Layers from '~/components/field/Layers'
 import TabButton from '~/components/TabButton.vue'
 import TabView from '~/components/TabView'
 import Token from '~/components/field/Token'
-import Layers from '~/components/field/Layers'
+import Tools from '~/components/field/Tools'
 
 import Battle from '~/components/sidebar/battle/Battle'
 import Character from '~/components/sidebar/character/Character'
@@ -39,32 +42,27 @@ import Library from '~/components/sidebar/library/Library'
 import Music from '~/components/sidebar/music/Music'
 import Settings from '~/components/sidebar/settings/Settings'
 
-import Image from '~/assets/Character/Artwork.png'
-
 export default {
   components: {
     Dice,
+    Field,
+    Journal,
+    Layers,
     TabButton,
     TabView,
     Token,
-    Layers,
+    Tools,
   },
   data() {
     return {
       dices: ['d4', 'd6', 'd8', 'd10', 'd12', 'd20'],
       tabs: [
-        { name: 'Journal', component: Journal },
         { name: 'Battle', component: Battle },
         { name: 'Character', component: Character },
         { name: 'Library', component: Library },
         { name: 'Music', component: Music },
         { name: 'Settings', component: Settings },
       ],
-      entity: {
-        health: { current: 16, total: 22 },
-        armor: { current: 14, total: 14 },
-        artwork: Image,
-      },
     }
   },
   computed: {
@@ -91,11 +89,14 @@ export default {
 .main
   display: flex
   height: 100vh
-
-.field
-  flex-grow: 1
-  background-color: #131515
-  position: relative
+  width: 100vw
+  overflow: hidden
+  &__workspace
+    width: calc(100% - 432px)
+    display: flex
+    flex-grow: 1
+    background-color: #131515
+    position: relative
 
 .block
   width: 64px

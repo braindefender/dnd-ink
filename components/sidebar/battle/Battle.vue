@@ -36,7 +36,7 @@ export default {
   components: { Entity, UIInput, MonsterList, UIIconButton },
   data() {
     return {
-      searchText: null,
+      searchText: '',
       entities: [this.$store.state.character],
       mods: [
         { name: 'Advantage', type: 'positive' },
