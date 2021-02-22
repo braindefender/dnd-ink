@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import Dice from '~/components/Dice.vue'
+import Dice from '~/components/Dice'
 import Field from '~/components/field/Field'
 import Layers from '~/components/field/Layers'
-import TabButton from '~/components/TabButton.vue'
+import TabButton from '~/components/TabButton'
 import TabView from '~/components/TabView'
 import Token from '~/components/field/Token'
 import Tools from '~/components/field/Tools'
